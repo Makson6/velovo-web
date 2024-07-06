@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import logoImage from "/velovo_npg-removebg-preview.png";
+import logoImage from "/logo.png";
 import { data } from "autoprefixer";
 
 function Connexion() {

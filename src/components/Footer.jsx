@@ -1,4 +1,9 @@
-import { AiOutlineWhatsApp, AiFillFacebook, AiFillMail, AiFillCopyrightCircle } from 'react-icons/ai';
+import {
+   AiOutlineWhatsApp,
+   AiFillFacebook,
+   AiFillMail,
+   AiFillCopyrightCircle
+} from 'react-icons/ai';
 import Logo from './Logo';
 
 
