@@ -1,17 +1,18 @@
-import React from 'react';
-import Logo from "/velovo_npg-removebg-preview.png";
-import Home from '/home_png-removebg-preview.png';
+import Menu from "./Menu";
+import Logo from "./Logo";
+import Button from "./Button";
+import Navigation from "./Navigation";
 
-function Header() {
-  return (
-    <header className="flex justify-between items-center h-12 bg-black w-[100%] fixed top-0 z-30">
-      <img src={Logo} alt="Logo" className="h-11 mr-1  z-20" />
-      <img src={Home} alt="Home" className="h-20 mr-3 mt-1 z-20" />
-      <button className="bg-black bg-opacity-55 hover:bg-blue-700 hover:underline text-white font-bold py-1 px-2 rounded">
-        Se Connecter
-      </button>
-    </header>
-  );
+
+export default function Header() {
+   return (
+      <header className="bg-black sticky top-0 text-gray-200">
+         <div className='container flex items-center justify-between px-2 py-3'>
+            <Logo />
+            <Navigation />
+            <Menu />
+            <Button title={'Se connecter'} className={'hidden md:block'} />
+         </div>
+      </header>
+   );
 }
-
-export default Header;

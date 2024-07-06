@@ -1,15 +1,25 @@
-import React from 'react';
-import Logo from "/velovo_npg-removebg-preview.png";
+import { AiOutlineWhatsApp, AiFillFacebook, AiFillMail, AiFillCopyrightCircle } from 'react-icons/ai';
+import Logo from './Logo';
 
 
-function Footer() {
-  return (  
-    <footer className="flex justify-between items-center stycky bottom-0 top-[90%] bg-black w-[100%] fixed">
-    <img src={Logo} alt="Logo" className="h-11 mr-1" />
-     <span className="text-white underline">pourquoi velovo?</span>
-     <p>hjghkjkjhkkjhkjhkj</p>
+export default function Footer() {
+   const year = new Date().getFullYear();
+   return (
+      <footer className="bg-black text-gray-200">
+         <div className='container flex items-center justify-between px-2 py-3'>
+            <Logo classes={'hidden md:block'} />
+            <div className='flex items-center gap-1'>
+               <span>Copyright</span>
+               <AiFillCopyrightCircle size={18} />
+               <span>Velovo</span>
+               {year}
+            </div>
+            <div className='flex items-center gap-2 md:gap-4'>
+               <AiFillFacebook className='#f5f5f5' size={24} />
+               <AiOutlineWhatsApp className='#f5f5f5' size={24} />
+               <AiFillMail color='#f5f5f5' size={24} />
+            </div>
+         </div>
       </footer>
-  );
+   );
 }
-
-export default Footer;
