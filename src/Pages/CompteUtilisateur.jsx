@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { useForm } from "react-hook-form";
-import Button from "../components/Boutton";
+import Button from "../components/Button";
 import car from "/photo-accueil-2.png";
 import add from "/add.svg";
 import mod from "/Modifier.svg";
