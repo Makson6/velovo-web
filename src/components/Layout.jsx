@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Button from "../components/Button";
+
 
 export default function Layout() {
 
     return (
-        <main role="main" className="text-slate-950">
+        <main role="main" className="text-slate-950 bg-gray-200 flex flex-col min-h-[100vh]">
             <Header />
-            <main className="container">
+            <main className="container px-2 flex-grow">
                 <Outlet />
             </main>
             <Footer />

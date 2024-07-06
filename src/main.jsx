@@ -14,41 +14,37 @@ import Footer from './components/Footer.jsx';
 
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Accueil />
-      },
-      {
-        path: '/location',
-        element: <Location />
-      },
-      {
-        path: '/connexion',
-        element: <Connexion />
-      },
-      {
-        path: '/nouveaucompte',
-        element: <CreationCompte />
-      },
-      {
-        path: '/utilisateur',
-        element: <CompteUtilisateur />
-      },
-    ]
-  },
-  {
-    path: '*',
-    element: <NotFound />
-  }
-])
+   {
+      path: '/',
+      element: <Layout />,
+      children: [
+         {
+            path: '/',
+            element: <Accueil />
+         },
+         {
+            path: '/location',
+            element: <Location />
+         },
+         {
+            path: '/connexion',
+            element: <Connexion />
+         },
+         {
+            path: '/nouveaucompte',
+            element: <CreationCompte />
+         },
+         {
+            path: '/utilisateur',
+            element: <CompteUtilisateur />
+         },
+      ]
+   },
+   {
+      path: '*',
+      element: <NotFound />
+   }
+]);
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-    <Header />
-    <NotFound />
-    <Footer />
-  </>
-)
+   <RouterProvider router={router} />
+);
