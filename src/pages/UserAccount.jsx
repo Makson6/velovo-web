@@ -7,7 +7,7 @@ import mod from "/Modifier.svg";
 import del from "/Trash.svg";
 import see from "/car.svg";
 
-function CreationCompte() {
+export default function UserAccount() {
   const {
     register,
     handleSubmit,
@@ -199,33 +199,33 @@ function CreationCompte() {
               </div>
 
               <div className="grid grid-cols-2 gap-4 p-4">
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className="relative bg-yellow-600 flex items-center justify-center h-24 w-24 rounded overflow-hidden"
-        >
-          <img
-            src={image}
-            alt={`Image ${index + 1}`}
-            className="object-cover w-full h-full"
-            />
-        </div>
-      ))}
+                {images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative bg-yellow-600 flex items-center justify-center h-24 w-24 rounded overflow-hidden"
+                  >
+                    <img
+                      src={image}
+                      alt={`Image ${index + 1}`}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                ))}
 
-      {images.length < maxImages && (
-          <div className="relative bg-green-600 flex items-center justify-center h-24 w-24 rounded overflow-hidden cursor-pointer">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageUpload}
-            className="absolute inset-0 opacity-0 cursor-pointer"
-            {...register("image", { required: true })}
-            />
-          <span className="text-white text-2xl h-4">+</span>
-        </div>
-      )}
+                {images.length < maxImages && (
+                  <div className="relative bg-green-600 flex items-center justify-center h-24 w-24 rounded overflow-hidden cursor-pointer">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="absolute inset-0 opacity-0 cursor-pointer"
+                      {...register("image", { required: true })}
+                    />
+                    <span className="text-white text-2xl h-4">+</span>
+                  </div>
+                )}
 
-    </div>
+              </div>
 
 
               <button className="bg-blue-600 rounded-md" type="submit">
@@ -238,5 +238,3 @@ function CreationCompte() {
     </div>
   );
 }
-
-export default CreationCompte;

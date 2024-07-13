@@ -7,8 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header() {
    const navigate = useNavigate();
-   const navigateHome = () => {
-      navigate('/');
+   const navigateHome = (path) => {
+      if (!path) return;
+      navigate(path);
    }
    return (
       <header className="bg-black sticky top-0 text-gray-200">
@@ -19,7 +20,7 @@ export default function Header() {
             <Button
                title={'Se connecter'}
                className={'hidden md:block'}
-               onClick={navigateHome}
+               handleClick={() => navigateHome('/login')}
             />
          </div>
       </header>

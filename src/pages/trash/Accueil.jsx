@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SearchBar from "../components/Search";
-import Button from "../components/Button";
+import SearchBar from "../../components/Search";
+import Button from "../../components/Button";
 
 
 export default function Accueil() {
