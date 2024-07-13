@@ -29,20 +29,22 @@ export default function Login() {
             <div className="w-full md:w-[50%] opacity-55 rounded-md flex items-center justify-center">
                <div className="flex flex-col h-[100%] rounded-lg w-[100%] text-center justify-center items-center relative  bg-gray-700 mx-3 py-8 px-8">
                   <div className="flex justify-between w-full items-center p-1">
-                     <img
+                     <h1 className="text-gray-50 font-bold text-xl">Bienvenue chez nous!</h1>
+                     {/* <Button handleClick={() => goToPath('/')} title={'CANCEL'} className='' /> */}
+                  </div>
+                  <img
                         src={logoImage}
                         alt="logo de l'application"
-                        className="flex justify-center items-center h-10 w-32  z-20"
+                        className="flex justify-center items-center h-10 w-32 z-20 my-3"
                      />
-                     <Button handleClick={() => goToPath('/')} title={'CANCEL'} className='' />
-                  </div>
 
-                  <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 items-center w-full">
+                  <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 items-start w-full">
                      <Input
                         type='text'
                         placeholder="Nom d'utilisateur"
                         register={register}
                         label="Nom d'utilisateur:"
+                        tagRef={'nom'}
                      />
 
                      <Input
@@ -50,11 +52,12 @@ export default function Login() {
                         placeholder='Mot de passe'
                         register={register}
                         label={'Mot de passe:'}
+                        tagRef={'password'}
                      />
 
                      <Button
                         title={'CONNECTER'}
-                        className="w-full"
+                        className="w-full bg-blue-500"
                      />
                      <p className=" text-white py-2 px-4 rounded-md w-[95%]">
                         ---------- ou ----------
@@ -62,7 +65,7 @@ export default function Login() {
                   </form>
                   <Button
                      title={'CREER UN COMPTE'}
-                     className="w-full"
+                     className="w-full bg-gray-200"
                      handleClick={() => goToPath('/register')}
                   />
                </div>

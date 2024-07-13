@@ -3,9 +3,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SearchBar from "../components/Search";
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
 
 
 export default function HomeScreen() {
+   const navigate = useNavigate();
+   const goToPath = (path) => {
+      if (!path) return;
+      navigate(path);
+   }
    const setting = {
       dots: true,
       infinite: true,
@@ -56,8 +62,8 @@ export default function HomeScreen() {
                Velovo car la solution idéale
             </p>
             <div className="flex justify-around items-center">
-               <Button title={'Achat'} />
-               <Button title={'Location'} />
+               <Button title={'Achat'} handleClick={() => goToPath('/location')} />
+               <Button title={'Location'} handleClick={() => goToPath('/location')} />
             </div>
          </div>
       </div>

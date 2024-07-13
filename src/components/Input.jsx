@@ -1,14 +1,14 @@
-export default function Input({ register, placeholder, type, className = '', errors, label }) {
+export default function Input({ register, placeholder, type, className = '', errors, label, tagRef }) {
    return (
-      <div className="w-full">
-         <label className="flex ml-2 text-white mb-2 justify-center">
+      <div className="w-full flex flex-col">
+         <label className="text-white text-left font-medium text-md mb-2">
             {label}
          </label>
          <input
             type={type}
             placeholder={placeholder}
-            className={`p-2 w-full outline-none ${className}`}
-            {...register("password", { required: true })}
+            className={`p-2 w-full outline-none bg-gray-400 rounded-md ${className}`}
+            {...register(tagRef, { required: true })}
          />
          {errors?.password && <p>Password is required</p>}
       </div>

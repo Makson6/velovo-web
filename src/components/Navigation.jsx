@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export default function Navigation() {
    return (
       <nav className="gap-8 font-medium hidden md:flex">
-         <Link to="/">Acceuil</Link>
-         <Link to="/buy">Achat</Link>
-         <Link to="/location">Location</Link>
+         <NavLink className={`${({ isActive }) => isActive ? 'underline' : ''} hover:underline`} to="/">Acceuil</NavLink>
+         <NavLink className={`${({ isActive }) => isActive ? 'underline' : ''} hover:underline`} to="/location">Achat</NavLink>
+         <NavLink className={`${({ isActive }) => isActive ? 'underline' : ''} hover:underline`} to="/location">Location</NavLink>
       </nav>
    );
 }
