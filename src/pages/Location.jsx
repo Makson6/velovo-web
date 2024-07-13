@@ -1,39 +1,22 @@
-import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import Gallery from "../components/Gallery";
 
-function Location() {
-  const renderImages = () => {
-    const images = Array.from({ length: 30 }, (_, index) => index + 1);
 
-    return (
-      <div>
-        <Button title={'Hello world'} />
-        {
-          (images.map((image) => (
-            <img
-              key={`image-${image}`}
-              src="telechargement.jpeg"
-              alt={`Image ${image}`}
-              className="w-full h-auto rounded-md"
-            />
-          )))
-        }
+export default function Location() {
+   const d = 'jesuisautravailbinen'.split('');
+   return (
+      <div className="py-5">
+         <Button title={'Votre choix est notre preoccupation!'} className="w-full my-3" />
+         <div className="py-6 flex gap-3 justify-between flex-wrap md:gap-10">
+            {
+               d.map((item, index) => (
+                  <Link to={`/location/${item}`} key={index}>
+                     <Gallery text={item} />
+                  </Link>
+               ))
+            }
+         </div>
       </div>
-
-    )
-  };
-
-  return (
-    <>
-      <div className="max-h-fit mt-4 ">
-        <div className="grid grid-cols-5 mt-[3%] m-1 gap-1 cursor-pointer">
-          {renderImages()}
-        </div>
-      </div>
-    </>
-  );
+   );
 }
-
-export default Location;
