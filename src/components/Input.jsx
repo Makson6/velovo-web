@@ -10,7 +10,7 @@ export default function Input({ register, placeholder, type, className = '', err
             className={`p-2 w-full outline-none bg-gray-400 rounded-md ${className}`}
             {...register(tagRef, { required: true })}
          />
-         {errors?.password && <p>Password is required</p>}
+         {errors?.label && <p>Password is required</p>}
       </div>
    );
 }
