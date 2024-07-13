@@ -5,6 +5,7 @@ export default function Navigation() {
          <NavLink className={`${({ isActive }) => isActive ? 'underline' : ''} hover:underline`} to="/">Acceuil</NavLink>
          <NavLink className={`${({ isActive }) => isActive ? 'underline' : ''} hover:underline`} to="/location">Achat</NavLink>
          <NavLink className={`${({ isActive }) => isActive ? 'underline' : ''} hover:underline`} to="/location">Location</NavLink>
+         <NavLink to={'/dashboard'}>Dashboard</NavLink>
       </nav>
    );
 }

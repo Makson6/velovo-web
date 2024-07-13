@@ -30,7 +30,7 @@ export default function Login() {
                <div className="flex flex-col h-[100%] rounded-lg w-[100%] text-center justify-center items-center relative  bg-gray-700 mx-3 py-8 px-8">
                   <div className="flex justify-between w-full items-center p-1">
                      <h1 className="text-gray-50 font-bold text-xl">Bienvenue chez nous!</h1>
-                     {/* <Button handleClick={() => goToPath('/')} title={'CANCEL'} className='' /> */}
+                     <Button handleClick={() => goToPath('/')} title={'CANCEL'} className='' />
                   </div>
                   <img
                         src={logoImage}
