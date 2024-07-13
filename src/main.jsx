@@ -1,42 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Layout from './components/Layout.jsx';
-import Accueil from './Pages/Accueil.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Location from './Pages/Location.jsx';
-import Connexion from './Pages/Connexion.jsx';
-import CreationCompte from './Pages/CreationCompte.jsx';
-import CompteUtilisateur from './Pages/CompteUtilisateur.jsx';
-import NotFound from './Pages/notfound.jsx';
-import Header from './components/Header.jsx';
+import Layout from './components/Layout.jsx';
+import HomeScreen from './pages/HomeScreen.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
+import UserAccount from './pages/UserAccount.jsx';
+import NotFound from './pages/NotFound.jsx';
 import './css/index.css';
-import Footer from './components/Footer.jsx';
 
 
 const router = createBrowserRouter([
    {
       path: '/',
+      errorElement: <NotFound />,
       element: <Layout />,
       children: [
          {
             path: '/',
-            element: <Accueil />
+            element: <HomeScreen />
          },
          {
             path: '/location',
             element: <Location />
          },
          {
-            path: '/connexion',
-            element: <Connexion />
+            path: '/login',
+            element: <Login />
          },
          {
-            path: '/nouveaucompte',
-            element: <CreationCompte />
+            path: '/register',
+            element: <Register />
          },
          {
-            path: '/utilisateur',
-            element: <CompteUtilisateur />
+            path: '/user',
+            element: <UserAccount />
          },
       ]
    },
