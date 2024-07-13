@@ -107,88 +107,68 @@ export default function UserAccount() {
                         register={register}
                         className='placeholder:text-gray-50'
                      />
-                     <div>
-                        <label className="text-white mb-1">Modele :</label>
-                        <input
-                           type="text"
-                           placeholder="Nom du model"
-                           className="w-full p-1 rounded text-center"
-                           {...register("model", { required: true })}
-                        />
-                        {errors.model && (
-                           <div className="text-white">model is required</div>
-                        )}
-                     </div>
-                     <div>
-                        <label className="text-white mb-1">Annee :</label>
-                        <input
-                           type="text"
-                           placeholder="Annee de fabrication"
-                           className="w-full p-1 rounded text-center"
-                           {...register("annee", { required: true })}
-                        />
-                        {errors.annee && (
-                           <div className="text-white">annee is required</div>
-                        )}
-                     </div>
-                     <div>
-                        <label className="text-white mb-1">Prix de location :</label>
-                        <input
-                           type="text"
-                           placeholder="Prix de location/jr"
-                           className="w-full p-1 rounded text-center"
-                           {...register("prix_location", { required: true })}
-                        />
-                        {errors.prix_location && (
-                           <div className="text-white">price is required</div>
-                        )}
-                     </div>
+                     <Input
+                        label={'Nom du Model:'}
+                        tagRef={'nomModel'}
+                        placeholder={'Nom du model'}
+                        type='text'
+                        register={register}
+                        className='placeholder:text-gray-50'
+                     />
+
+                     <Input
+                        label={'Annee :'}
+                        tagRef={'annee'}
+                        placeholder={'Annee de fabrication'}
+                        type='text'
+                        register={register}
+                        className='placeholder:text-gray-50'
+                     />
+
+                     <Input
+                        label={'Prix de location :'}
+                        tagRef={'prixLocation'}
+                        placeholder={'Prix de location/jr'}
+                        type='text'
+                        register={register}
+                        className='placeholder:text-gray-50'
+                     />
+
+                     <Input
+                        label={'Prix de vente :'}
+                        tagRef={'prixVente'}
+                        placeholder={'Prix de vente'}
+                        type='text'
+                        register={register}
+                        className='placeholder:text-gray-50'
+                     />
+
+                     <Input
+                        label={'Type :'}
+                        tagRef={'prixVente'}
+                        placeholder={'Prix de vente'}
+                        type='text'
+                        register={register}
+                        className='placeholder:text-gray-50'
+                     />
+
+                     <Input
+                        label={'Type :'}
+                        tagRef={'prixVente'}
+                        placeholder={'Prix de vente'}
+                        type='text'
+                        register={register}
+                        className='placeholder:text-gray-50'
+                     />
 
                      <div>
-                        <label className="text-white mb-1">Prix de vente :</label>
-                        <input
-                           type="text"
-                           placeholder="Prix de vente"
-                           className="w-full p-1 rounded text-center"
-                           {...register("prix_vente", { required: true })}
-                        />
-                        {errors.prix_vente && (
-                           <div className="text-white">price is required</div>
-                        )}
-                     </div>
-                     <div>
-                        <label className="text-white mb-1">Type :</label>
-                        <input
-                           type="text"
-                           placeholder="Prix de vente"
-                           className="w-full p-1 rounded text-center"
-                           {...register("prix_vente", { required: true })}
-                        />
-                        {errors.prix_vente && (
-                           <div className="text-white">price is required</div>
-                        )}
-                     </div>
-                     <div>
-                        <label className="text-white mb-1">Prix de vente :</label>
-                        <input
-                           type="text"
-                           placeholder="Prix de vente"
-                           className="w-full p-1 rounded text-center"
-                           {...register("prix_vente", { required: true })}
-                        />
-                        {errors.prix_vente && (
-                           <div className="text-white">price is required</div>
-                        )}
-                     </div>
-
-                     <div>
-                        <label className="text-white mb-1">Levier :</label>
+                        <label className="text-white text-left font-medium text-md mb-2">Levier :</label>
                         <select
-                           className="w-full p-1 rounded text-center"
-                           defaultValue=""
+                           className="p-2 w-full outline-none bg-gray-400 rounded-md"
+                           defaultValue="Automatique"
                            {...register("gear", { required: true })}
                         >
-                           <option value="">Faire</option>
+                           <option value="">Manuelle</option>
                            <option value="automatique">Automatique</option>
                            <option value="manuelle">Manuelle</option>
                         </select>
@@ -203,7 +183,7 @@ export default function UserAccount() {
                         {images.map((image, index) => (
                            <div
                               key={index}
-                              className="relative bg-yellow-600 flex items-center justify-center h-24 w-24 rounded overflow-hidden"
+                              className="relative flex items-center justify-center h-24 w-24 rounded overflow-hidden"
                            >
                               <img
                                  src={image}
@@ -214,24 +194,19 @@ export default function UserAccount() {
                         ))}
 
                         {images.length < maxImages && (
-                           <div className="relative bg-green-600 flex items-center justify-center h-24 w-24 rounded overflow-hidden cursor-pointer">
-                              <input
-                                 type="file"
+                           <>
+                              <Input
+                                 type={'file'}
+                                 tagRef={'updloadedImage'}
                                  accept="image/*"
-                                 onChange={handleImageUpload}
-                                 className="absolute inset-0 opacity-0 cursor-pointer"
-                                 {...register("image", { required: true })}
+                                 register={register}
                               />
-                              <span className="text-white text-2xl h-4">+</span>
-                           </div>
+                           </>
                         )}
 
                      </div>
 
-
-                     <button className="bg-blue-600 rounded-md" type="submit">
-                        ajouter
-                     </button>
+                     <Button title={'Ajouter'} type={'submit'} className="bg-slate-950" />
                   </form>
                </div>
             </div>
