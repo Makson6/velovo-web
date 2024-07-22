@@ -218,7 +218,8 @@ export default function Dashboard() {
                                  type="file"
                                  accept="image/*"
                                  onChange={handleImageUpload}
-                                 className="absolute inset-0 opacity-0 cursor-pointer"
+                                 placeholder="Choisir une image"
+                                 className="inset-0 opacity-0 w-full cursor-pointer file:w-full file:bg-red-500"
                                  {...register("image", { required: true })}
                               />
                               <span className="text-white text-2xl h-4">+</span>
